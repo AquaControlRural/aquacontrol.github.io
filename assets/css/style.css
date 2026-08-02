@@ -901,3 +901,104 @@ DASHBOARD CARD
     height:350px !important;
 
 }
+
+/*=============================
+    TABLAS
+==============================*/
+
+.table{
+
+    border-radius:15px;
+    overflow:hidden;
+
+}
+
+.table thead{
+
+    background:#f8f9fa;
+
+}
+
+.table tbody tr{
+
+    transition:.25s;
+
+}
+
+.table tbody tr:hover{
+
+    background:#eef7ff;
+
+    transform:scale(1.01);
+
+}
+
+.btn-action{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:10px;
+
+    margin:0 2px;
+
+    transition:.25s;
+
+}
+
+.btn-edit{
+
+    background:#ffc107;
+
+    color:white;
+
+}
+
+.btn-delete{
+
+    background:#dc3545;
+
+    color:white;
+
+}
+
+.btn-action:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.badge-activo{
+
+    background:#198754;
+
+}
+
+.badge-inactivo{
+
+    background:#6c757d;
+
+}
+
+.btn-success,
+.btn-danger{
+
+    border-radius:12px;
+
+    transition:.25s;
+
+    font-weight:500;
+
+}
+
+.btn-success:hover,
+.btn-danger:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}

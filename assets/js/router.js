@@ -30,8 +30,9 @@ async function cargarVista(vista) {
 
             case "usuarios":
 
-                // const usuarios = await import("./modules/usuarios.js");
-                // usuarios.init();
+                const usuarios = await import("./modules/usuarios.js");
+
+                usuarios.initUsuarios();
 
                 break;
 
