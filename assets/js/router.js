@@ -35,6 +35,20 @@ async function cargarVista(vista) {
                 usuarios.initUsuarios();
 
                 break;
+            case "comunidades":
+
+                const comunidades = await import("./modules/comunidades.js");
+
+                comunidades.initComunidades();
+
+                break;
+            case "pozos":
+
+                const pozos = await import("./modules/pozos.js");
+
+                pozos.initPozos();
+
+                break;
 
         }
 

@@ -1,0 +1,257 @@
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold">
+                Comunidades
+            </h2>
+
+            <p class="text-muted mb-0">
+                Administración de comunidades
+            </p>
+
+        </div>
+
+        <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalComunidad">
+
+            <i class="bi bi-plus-circle me-2"></i>
+
+            Nueva Comunidad
+
+        </button>
+
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4">
+
+        <div class="card-body">
+
+            <div class="row mb-3">
+
+                <div class="col-md-4">
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="buscarComunidad"
+                        placeholder="Buscar comunidad...">
+
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table
+                    class="table table-hover align-middle"
+                    id="tablaComunidades">
+
+                    <thead class="table-light">
+
+                        <tr>
+
+                            <th width="60">#</th>
+
+                            <th>Comunidad</th>
+
+                            <th>Municipio</th>
+
+                            <th>Habitantes</th>
+
+                            <th>Responsable</th>
+
+                            <th>Estado</th>
+
+                            <th width="170" class="text-center">
+
+                                Acciones
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td colspan="7" class="text-center text-muted">
+
+                                No hay comunidades registradas.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MODAL
+=========================== -->
+
+<div
+    class="modal fade"
+    id="modalComunidad"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    Nueva Comunidad
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Nombre
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="txtComunidad"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Municipio
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="txtMunicipio"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Habitantes
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="txtHabitantes"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Responsable
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="txtResponsable"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Estado
+
+                        </label>
+
+                        <select
+                            id="cmbEstado"
+                            class="form-select">
+
+                            <option value="Activa">
+
+                                Activa
+
+                            </option>
+
+                            <option value="Inactiva">
+
+                                Inactiva
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="btnGuardarComunidad">
+
+                    Guardar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

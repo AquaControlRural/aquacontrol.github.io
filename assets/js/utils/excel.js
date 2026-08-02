@@ -169,7 +169,16 @@ export async function exportarExcel(config){
 /*=========================================
 TABLA
 =========================================*/
+if (!config.datos || config.datos.length === 0) {
 
+    Swal.fire({
+        icon: "warning",
+        title: "No hay datos para exportar"
+    });
+
+    return;
+
+}
 const columnas = Object.keys(config.datos[0]);
 
 hoja.addRow([]);
