@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>AquaControl Rural</title>
 
     <!-- Bootstrap -->
@@ -15,110 +14,362 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<div class="wrapper">
+    <!-- NAVBAR -->
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
 
-        <div class="logo">
+        <div class="container-fluid">
 
-            <i class="bi bi-droplet-fill"></i>
+            <!-- Botón móvil -->
+            <button class="btn btn-primary d-lg-none"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#sidebarMenu">
 
-            <h3>AquaControl</h3>
+                <i class="bi bi-list"></i>
 
-            <span>Rural</span>
+            </button>
+
+            <a class="navbar-brand fw-bold ms-2" href="#">
+                💧 AquaControl Rural
+            </a>
+
+            <div class="ms-auto d-flex align-items-center gap-2 flex-shrink-0">
+
+                <button class="btn btn-light position-relative">
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                    </span>
+
+                </button>
+
+                <div class="dropdown">
+
+                    <button
+                        class="btn btn-light dropdown-toggle d-flex align-items-center"
+                        data-bs-toggle="dropdown">
+
+                        <i class="bi bi-person-circle me-2"></i>
+
+                        <span class="d-none d-md-inline">
+                            Administrador
+                        </span>
+
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+
+                        <li><a class="dropdown-item text-danger" href="#">Cerrar sesión</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <ul>
+    </nav>
 
-            <li class="active">
-                <i class="bi bi-speedometer2"></i>
-                Dashboard
+    <!-- SIDEBAR ESCRITORIO -->
+
+    <aside class="sidebar d-none d-lg-block">
+
+        <div class="text-center py-4">
+
+            <i class="bi bi-droplet-fill fs-1 text-primary"></i>
+
+            <h3 class="fw-bold text-primary mt-2">
+                AquaControl
+            </h3>
+
+            <small class="text-primary">
+                Rural
+            </small>
+
+        </div>
+
+        <hr>
+
+        <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    <i class="bi bi-speedometer2"></i>
+                    Dashboard
+                </a>
             </li>
 
-            <li>
-                <i class="bi bi-water"></i>
-                Pozos
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-water"></i>
+                    Pozos
+                </a>
             </li>
 
-            <li>
-                <i class="bi bi-gear-fill"></i>
-                Bombas
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-gear-fill"></i>
+                    Bombas
+                </a>
             </li>
 
-            <li>
-                <i class="bi bi-houses-fill"></i>
-                Comunidades
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-houses-fill"></i>
+                    Comunidades
+                </a>
             </li>
 
-            <li>
-                <i class="bi bi-tools"></i>
-                Mantenimientos
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-tools"></i>
+                    Mantenimientos
+                </a>
             </li>
 
-            <li>
-                <i class="bi bi-box-seam"></i>
-                Inventario
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-box-seam"></i>
+                    Inventario
+                </a>
             </li>
 
-            <li>
-                <i class="bi bi-journal-text"></i>
-                Bitácora
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-journal-text"></i>
+                    Bitácora
+                </a>
             </li>
 
-            <li>
-                <i class="bi bi-calendar-event"></i>
-                Calendario
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-calendar-event"></i>
+                    Calendario
+                </a>
             </li>
 
-            <li>
-                <i class="bi bi-bar-chart-fill"></i>
-                Reportes
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-bar-chart-fill"></i>
+                    Reportes
+                </a>
             </li>
 
-            <li>
-                <i class="bi bi-people-fill"></i>
-                Usuarios
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-people-fill"></i>
+                    Usuarios
+                </a>
             </li>
 
         </ul>
 
     </aside>
 
-    <!-- Contenido -->
-    <main class="content">
+    <!-- SIDEBAR MÓVIL -->
 
-        <!-- Navbar -->
-        <header class="topbar">
+    <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="sidebarMenu">
 
-            <h4>Dashboard</h4>
+        <div class="offcanvas-header">
 
-            <div class="user">
+            <h5 class="fw-bold text-primary">
 
-                <i class="bi bi-person-circle"></i>
+                💧 AquaControl
 
-                Administrador
+            </h5>
+
+            <button
+                class="btn-close"
+                data-bs-dismiss="offcanvas">
+
+            </button>
+
+        </div>
+
+        <div class="offcanvas-body">
+
+            <ul class="nav flex-column">
+
+                <li><a class="nav-link active" href="#">Dashboard</a></li>
+                <li><a class="nav-link" href="#">Pozos</a></li>
+                <li><a class="nav-link" href="#">Bombas</a></li>
+                <li><a class="nav-link" href="#">Comunidades</a></li>
+                <li><a class="nav-link" href="#">Mantenimientos</a></li>
+                <li><a class="nav-link" href="#">Inventario</a></li>
+                <li><a class="nav-link" href="#">Bitácora</a></li>
+                <li><a class="nav-link" href="#">Calendario</a></li>
+                <li><a class="nav-link" href="#">Reportes</a></li>
+                <li><a class="nav-link" href="#">Usuarios</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- CONTENIDO -->
+
+    <main class="contenido">
+
+        <div class="container-fluid">
+
+            <div class="mb-4">
+
+                <h2 class="fw-bold">
+                    Dashboard
+                </h2>
+
+                <p class="text-muted">
+                    Bienvenido a AquaControl Rural
+                </p>
 
             </div>
 
-        </header>
+            <!-- TARJETAS -->
 
-        <!-- Aquí irá el dashboard -->
+            <div class="row g-4">
+
+                <div class="col-12 col-sm-6 col-xl-3">
+
+                    <div class="card h-100">
+
+                        <div class="card-body">
+
+                            <h6>Pozos Activos</h6>
+
+                            <h2>18</h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+
+                    <div class="card h-100">
+
+                        <div class="card-body">
+
+                            <h6>Bombas Activas</h6>
+
+                            <h2>24</h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+
+                    <div class="card h-100">
+
+                        <div class="card-body">
+
+                            <h6>Mantenimientos</h6>
+
+                            <h2>5</h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+
+                    <div class="card h-100">
+
+                        <div class="card-body">
+
+                            <h6>Fallas</h6>
+
+                            <h2>2</h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SEGUNDA FILA -->
+
+            <div class="row mt-4 g-4">
+
+                <div class="col-12 col-xl-8">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            Mantenimientos por mes
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <canvas id="grafica"></canvas>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-xl-4">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            Actividad reciente
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item">🟢 Encendido de bomba</li>
+                                <li class="list-group-item">⚙ Cambio de motor</li>
+                                <li class="list-group-item">🧹 Limpieza de pozo</li>
+                                <li class="list-group-item">⚡ Revisión eléctrica</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </main>
 
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

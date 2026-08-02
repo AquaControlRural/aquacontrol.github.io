@@ -1,0 +1,436 @@
+/* ===========================
+   VARIABLES
+=========================== */
+
+:root{
+    --primary:#1976D2;
+    --primary-dark:#0D47A1;
+    --success:#2E7D32;
+    --warning:#F9A825;
+    --danger:#D32F2F;
+    --background:#F5F7FA;
+    --card:#FFFFFF;
+    --text:#263238;
+    --text-light:#607D8B;
+    --shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* ===========================
+   GENERAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--background);
+    color:var(--text);
+}
+
+.wrapper{
+    display:flex;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+
+    width:260px;
+
+    min-height:100vh;
+
+    background:linear-gradient(180deg,#1976D2,#0D47A1);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:25px;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.logo i{
+
+    font-size:55px;
+
+}
+
+.logo h2{
+
+    margin-top:10px;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    opacity:.8;
+
+}
+
+.sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.sidebar nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar nav a:hover{
+
+    background:rgba(255,255,255,.15);
+
+    transform:translateX(5px);
+
+}
+
+.sidebar nav a.active{
+
+    background:white;
+
+    color:var(--primary);
+
+}
+
+.sidebar nav i{
+
+    margin-right:10px;
+
+}
+
+.sidebar-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+}
+
+.sidebar-user i{
+
+    font-size:40px;
+
+}
+
+/* ===========================
+   MAIN
+=========================== */
+
+.main{
+
+    flex:1;
+
+}
+
+/* ===========================
+   TOPBAR
+=========================== */
+
+.topbar{
+
+    background:white;
+
+    height:75px;
+
+    padding:0 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.topbar h3{
+
+    font-weight:600;
+
+}
+
+.topbar small{
+
+    color:var(--text-light);
+
+}
+
+.top-icons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.top-icons button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#EEF4FA;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.top-icons button:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ===========================
+   CARDS
+=========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    padding:30px;
+
+}
+
+.card-box{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.card-box:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card-box i{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    font-size:55px;
+
+    opacity:.15;
+
+}
+
+.card-box h3{
+
+    font-size:38px;
+
+    font-weight:700;
+
+}
+
+.card-box span{
+
+    color:var(--text-light);
+
+}
+
+.blue{
+
+    border-left:6px solid var(--primary);
+
+}
+
+.green{
+
+    border-left:6px solid var(--success);
+
+}
+
+.orange{
+
+    border-left:6px solid var(--warning);
+
+}
+
+.red{
+
+    border-left:6px solid var(--danger);
+
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.content-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+    padding:0 30px 30px;
+
+}
+
+.chart-card,
+.activity-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.chart-card{
+
+    min-height:420px;
+
+}
+
+.activity-card ul{
+
+    list-style:none;
+
+    margin-top:20px;
+
+}
+
+.activity-card li{
+
+    padding:12px 0;
+
+    border-bottom:1px solid #ECECEC;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .sidebar{
+
+        width:90px;
+
+    }
+
+    .sidebar h2,
+    .sidebar span,
+    .sidebar strong,
+    .sidebar small{
+
+        display:none;
+
+    }
+
+    .sidebar nav a{
+
+        text-align:center;
+
+    }
+
+    .sidebar nav i{
+
+        margin:0;
+
+        font-size:22px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .wrapper{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        width:100%;
+
+        min-height:auto;
+
+    }
+
+    .content-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
