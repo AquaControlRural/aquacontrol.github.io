@@ -9,7 +9,6 @@ let idEditar = null;
 
 let datosPozos = {};
 let modal;
-
 export function initPozos() {
 
     modal = new bootstrap.Modal(

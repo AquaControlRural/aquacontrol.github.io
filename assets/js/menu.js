@@ -64,8 +64,9 @@ function crearMenu(contenedor) {
             <li class="nav-item">
 
                 <a href="#"
-                   class="nav-link menu-link"
-                   data-view="${item.vista}">
+                    class="nav-link menu-link"
+                    data-view="${item.vista}"
+                    id="menu-${item.vista}">
 
                     <i class="bi ${item.icono} me-2"></i>
 

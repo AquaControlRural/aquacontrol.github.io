@@ -1002,3 +1002,43 @@ DASHBOARD CARD
     box-shadow:0 8px 20px rgba(0,0,0,.15);
 
 }
+
+/*====================================
+MENÚ ACTIVO
+====================================*/
+
+.menu-link{
+
+    border-radius:12px;
+
+    transition:.25s;
+
+    margin:3px 8px;
+
+}
+
+.menu-link:hover{
+
+    background:#E3F2FD;
+
+    color:#1976D2 !important;
+
+}
+
+.menu-activo{
+
+    background:#1976D2 !important;
+
+    color:#fff !important;
+
+    font-weight:600;
+
+    box-shadow:0 4px 12px rgba(25,118,210,.30);
+
+}
+
+.menu-activo i{
+
+    color:#fff !important;
+
+}

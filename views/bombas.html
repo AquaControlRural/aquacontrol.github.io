@@ -1,0 +1,261 @@
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold">
+
+                Bombas
+
+            </h2>
+
+            <p class="text-muted mb-0">
+
+                Administración de bombas
+
+            </p>
+
+        </div>
+
+        <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalBomba">
+
+            <i class="bi bi-plus-circle me-2"></i>
+
+            Nueva Bomba
+
+        </button>
+
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4">
+
+        <div class="card-body">
+
+            <div class="row mb-3">
+
+                <div class="col-md-4">
+
+                    <input
+                        class="form-control"
+                        id="buscarBomba"
+                        placeholder="Buscar bomba...">
+
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table
+                    class="table table-hover align-middle"
+                    id="tablaBombas">
+
+                    <thead class="table-light">
+
+                        <tr>
+
+                            <th width="60">#</th>
+
+                            <th>Bomba</th>
+
+                            <th>Pozo</th>
+
+                            <th>Potencia</th>
+
+                            <th>Marca</th>
+
+                            <th>Modelo</th>
+
+                            <th>Estado</th>
+
+                            <th width="170" class="text-center">
+
+                                Acciones
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td colspan="8" class="text-center text-muted">
+
+                                No hay bombas registradas.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="modal fade"
+    id="modalBomba"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    Nueva Bomba
+
+                </h5>
+
+                <button
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Nombre
+
+                        </label>
+
+                        <input
+                            id="txtBomba"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Pozo
+
+                        </label>
+
+                        <select
+                            id="cmbPozo"
+                            class="form-select">
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Potencia (HP)
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="txtPotencia"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Marca
+
+                        </label>
+
+                        <input
+                            id="txtMarca"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Modelo
+
+                        </label>
+
+                        <input
+                            id="txtModelo"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Estado
+
+                        </label>
+
+                        <select
+                            id="cmbEstadoBomba"
+                            class="form-select">
+
+                            <option>Operativa</option>
+
+                            <option>Mantenimiento</option>
+
+                            <option>Fuera de servicio</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    class="btn btn-primary"
+                    id="btnGuardarBomba">
+
+                    Guardar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

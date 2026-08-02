@@ -16,8 +16,17 @@ async function cargarVista(vista) {
 
         document.getElementById("breadcrumb").textContent =
             vista.charAt(0).toUpperCase() + vista.slice(1);
+        // Quitar selección anterior
+        document.querySelectorAll(".menu-link").forEach(link => {
 
-        // Ejecutar el JS correspondiente a la vista
+            link.classList.remove("menu-activo");
+
+        });
+
+        // Activar menú actual
+        document
+            .getElementById(`menu-${vista}`)
+            ?.classList.add("menu-activo");
         switch (vista) {
 
             case "dashboard":
@@ -47,6 +56,20 @@ async function cargarVista(vista) {
                 const pozos = await import("./modules/pozos.js");
 
                 pozos.initPozos();
+
+                break;
+            case "bombas":
+
+                const bombas = await import("./modules/bombas.js");
+
+                bombas.initBombas();
+
+                break;
+            case "mantenimientos":
+
+                const mantenimientos = await import("./modules/mantenimientos.js");
+
+                mantenimientos.initMantenimientos();
 
                 break;
 

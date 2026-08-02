@@ -1,0 +1,281 @@
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold">
+
+                Mantenimientos
+
+            </h2>
+
+            <p class="text-muted mb-0">
+
+                Administración de mantenimientos
+
+            </p>
+
+        </div>
+
+        <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalMantenimiento">
+
+            <i class="bi bi-plus-circle me-2"></i>
+
+            Nuevo Mantenimiento
+
+        </button>
+
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4">
+
+        <div class="card-body">
+
+            <div class="row mb-3">
+
+                <div class="col-md-4">
+
+                    <input
+                        class="form-control"
+                        id="buscarMantenimiento"
+                        placeholder="Buscar mantenimiento...">
+
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table
+                    class="table table-hover align-middle"
+                    id="tablaMantenimientos">
+
+                    <thead class="table-light">
+
+                        <tr>
+
+                            <th>#</th>
+
+                            <th>Fecha</th>
+
+                            <th>Bomba</th>
+
+                            <th>Tipo</th>
+
+                            <th>Técnico</th>
+
+                            <th>Estado</th>
+
+                            <th class="text-center">
+
+                                Acciones
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td colspan="7" class="text-center text-muted">
+
+                                No hay mantenimientos registrados.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="modal fade"
+    id="modalMantenimiento"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-xl">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    Nuevo Mantenimiento
+
+                </h5>
+
+                <button
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Bomba
+
+                        </label>
+
+                        <select
+                            id="cmbBomba"
+                            class="form-select">
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+
+                        <label class="form-label">
+
+                            Fecha
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="txtFecha"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+
+                        <label class="form-label">
+
+                            Tipo
+
+                        </label>
+
+                        <select
+                            id="cmbTipoMantenimiento"
+                            class="form-select">
+
+                            <option>Preventivo</option>
+
+                            <option>Correctivo</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Técnico responsable
+
+                        </label>
+
+                        <input
+                            id="txtTecnico"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Costo ($)
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="txtCosto"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-12 mb-3">
+
+                        <label class="form-label">
+
+                            Descripción
+
+                        </label>
+
+                        <textarea
+                            id="txtDescripcion"
+                            rows="4"
+                            class="form-control"></textarea>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+
+                            Estado
+
+                        </label>
+
+                        <select
+                            id="cmbEstadoMantenimiento"
+                            class="form-select">
+
+                            <option>Pendiente</option>
+
+                            <option>En proceso</option>
+
+                            <option>Finalizado</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    class="btn btn-primary"
+                    id="btnGuardarMantenimiento">
+
+                    Guardar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
