@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>AquaControl Rural</title>
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/login.css">
+    </head>
+    <body>
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <!-- Lado izquierdo -->
+            <div class="col-lg-7 d-none d-lg-flex left-side">
+                <div class="overlay">
+                    <h1>AquaControl Rural</h1>
+                    <p>
+                        Gestión inteligente de sistemas de bombeo
+                        y distribución de agua.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Login -->
+            <div class="col-lg-5 col-12 d-flex align-items-center justify-content-center">
+                <div class="login-card">
+                    <div class="text-center mb-4">
+                        <i class="bi bi-droplet-fill logo"></i>
+                        <h2>AquaControl</h2>
+                        <small>Rural</small>
+                    </div>
+
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label>Correo electrónico</label>
+                            <input
+                                id="email"
+                                type="email"
+                                class="form-control"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label>Contraseña</label>
+                            <input
+                                id="password"
+                                type="password"
+                                class="form-control"
+                                required>
+                        </div>
+                        <button class="btn btn-primary w-100">
+                            Iniciar sesión
+                        </button>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type="module" src="assets/js/auth.js"></script>
+    </body>
+</html>
