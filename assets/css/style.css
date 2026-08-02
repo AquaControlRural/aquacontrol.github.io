@@ -697,3 +697,207 @@ canvas{
     }
 
 }
+
+/*=========================
+DASHBOARD CARD
+==========================*/
+
+.dashboard-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+    height:100%;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+}
+
+.card-content small{
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+.card-content h2{
+
+    margin-top:8px;
+
+    margin-bottom:5px;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.card-content span{
+
+    color:var(--text-light);
+
+    font-size:.85rem;
+
+}
+
+.dashboard-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:rgba(25,118,210,.05);
+
+    right:-35px;
+
+    top:-35px;
+
+}
+
+.dashboard-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    position:relative;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    overflow:hidden;
+
+    transition:.3s;
+
+    height:100%;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 35px rgba(0,0,0,.12);
+
+}
+
+.dashboard-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+}
+
+.dashboard-card h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin:5px 0;
+
+}
+
+.dashboard-card h6{
+
+    color:#607D8B;
+
+    margin:0;
+
+}
+
+.dashboard-card small{
+
+    color:#90A4AE;
+
+}
+
+.dashboard-trend{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    background:#E8F5E9;
+
+    color:#2E7D32;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+#chartMaintenances{
+
+    width:100% !important;
+
+    height:350px !important;
+
+}
