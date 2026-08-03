@@ -47,9 +47,14 @@
 
             <!-- Logo -->
 
-            <a class="navbar-brand fw-bold ms-2" href="#">
+            <!-- Logo -->
 
-                💧 AquaControl Rural
+            <a class="navbar-brand ms-2" href="#">
+
+                <img 
+                    src="assets/img/logo.png"
+                    alt="AquaControl Rural"
+                    class="logo-navbar">
 
             </a>
 
@@ -57,13 +62,15 @@
 
             <div class="ms-auto d-flex align-items-center gap-2">
 
-                <button class="btn btn-light position-relative">
+                <button class="btn btn-light position-relative" id="btnNotificaciones">
 
                     <i class="bi bi-bell fs-5"></i>
 
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <span 
+                        id="contadorNotificaciones"
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
 
-                        3
+                        0
 
                     </span>
 
@@ -89,33 +96,43 @@
 
                         <li>
 
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="#perfil">
 
+                                <i class="bi bi-person me-2"></i>
                                 Mi Perfil
 
                             </a>
 
                         </li>
 
+
                         <li>
 
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="#configuracion">
 
+                                <i class="bi bi-gear me-2"></i>
                                 Configuración
 
                             </a>
 
                         </li>
 
-                        <li><hr class="dropdown-divider"></li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
 
                         <li>
 
-                            <a class="dropdown-item text-danger" href="#">
+                            <button 
+                                class="dropdown-item text-danger"
+                                id="btnCerrarSesion">
 
+                                <i class="bi bi-box-arrow-right me-2"></i>
                                 Cerrar sesión
 
-                            </a>
+                            </button>
 
                         </li>
 
@@ -135,11 +152,9 @@
 
         <div class="logo">
 
-            <i class="bi bi-droplet-fill"></i>
-
-            <h2>AquaControl</h2>
-
-            <span>Rural</span>
+            <img src="assets/img/logo.png"
+                alt="AquaControl Rural"
+                class="logo-sidebar">
 
         </div>
 
@@ -233,7 +248,7 @@
     </footer>
 
     <!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Firebase -->
@@ -246,13 +261,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Router -->
-
+<script type="module" src="assets/js/notificaciones.js"></script>
     <script type="module" src="assets/js/router.js"></script>
 
     <!-- App -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 
     <script type="module" src="assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.js"></script>

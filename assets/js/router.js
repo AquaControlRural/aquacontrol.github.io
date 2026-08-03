@@ -29,13 +29,22 @@ async function cargarVista(vista) {
             ?.classList.add("menu-activo");
         switch (vista) {
 
+
             case "dashboard":
+
+                console.log("ANTES DE EJECUTAR FUNCION");
 
                 const dashboard = await import("./modules/dashboard.js");
 
-                dashboard.renderDashboard();
+                console.log("MODULO IMPORTADO", dashboard);
 
-                break;
+                console.log("FUNCION:", dashboard.renderDashboard);
+
+                await dashboard.renderDashboard();
+
+                console.log("DESPUES DE EJECUTAR FUNCION");
+
+            break;
 
             case "usuarios":
 

@@ -1049,3 +1049,46 @@ MENÚ ACTIVO
     color:white;
 
 }
+
+/* ============================= */
+/* LOGOS DEL SISTEMA */
+/* ============================= */
+
+
+.logo-navbar{
+
+    height:45px;
+    width:auto;
+    object-fit:contain;
+
+}
+
+
+
+.logo-sidebar{
+
+    width:180px;
+    max-width:90%;
+    height:auto;
+
+}
+
+
+
+.logo-mobile{
+
+    width:150px;
+    height:auto;
+
+}
+
+
+
+.sidebar .logo{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px 10px;
+
+}

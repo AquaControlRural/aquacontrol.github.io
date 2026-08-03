@@ -33,7 +33,10 @@ const dashboardCards = [
     }
 
 ];
+const rol = await obtenerRolUsuario(usuario.uid);
 
+
+console.log("Rol actual:", rol);
 function crearTarjetas(){
 
     const contenedor = document.getElementById("cardsContainer");

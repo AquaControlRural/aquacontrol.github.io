@@ -1,7 +1,6 @@
 <div class="container-fluid">
 
     <!-- Encabezado -->
-
     <div class="mb-4">
 
         <h2 class="fw-bold">
@@ -9,23 +8,22 @@
         </h2>
 
         <p class="text-muted">
-            Bienvenido a AquaControl Rural
+            Resumen general del sistema AquaControl Rural
         </p>
 
     </div>
 
-    <!-- Tarjetas (se generan con dashboard.js) -->
-
+    <!-- Tarjetas -->
     <div class="row g-4 mb-4" id="cardsContainer">
+
+        <!-- Se generan desde dashboard.js -->
 
     </div>
 
     <!-- Gráfica y Actividad -->
-
     <div class="row g-4">
 
         <!-- Gráfica -->
-
         <div class="col-12 col-xl-8">
 
             <div class="card shadow-sm border-0 rounded-4 h-100">
@@ -33,29 +31,48 @@
                 <div class="card-header bg-white border-0 rounded-top-4 d-flex justify-content-between align-items-center">
 
                     <h5 class="mb-0 fw-semibold">
+
                         Mantenimientos por Mes
+
                     </h5>
 
                     <div class="d-flex gap-2">
 
                         <select
-                            class="form-select form-select-sm"
                             id="yearChart"
+                            class="form-select form-select-sm"
                             style="width:110px;">
 
                             <option value="2026">2026</option>
+
                             <option value="2025">2025</option>
+
+                            <option value="2024">2024</option>
 
                         </select>
 
                         <select
-                            class="form-select form-select-sm"
                             id="typeChart"
-                            style="width:150px;">
+                            class="form-select form-select-sm"
+                            style="width:170px;">
 
-                            <option value="todos">Todos</option>
-                            <option value="preventivos">Preventivos</option>
-                            <option value="correctivos">Correctivos</option>
+                            <option value="todos">
+
+                                Todos
+
+                            </option>
+
+                            <option value="preventivos">
+
+                                Preventivos
+
+                            </option>
+
+                            <option value="correctivos">
+
+                                Correctivos
+
+                            </option>
 
                         </select>
 
@@ -63,7 +80,7 @@
 
                 </div>
 
-                <div class="card-body">
+                <div class="card-body" style="height:420px;">
 
                     <canvas id="chartMaintenances"></canvas>
 
@@ -74,7 +91,6 @@
         </div>
 
         <!-- Actividad -->
-
         <div class="col-12 col-xl-4">
 
             <div class="card shadow-sm border-0 rounded-4 h-100">
@@ -82,158 +98,26 @@
                 <div class="card-header bg-white border-0 rounded-top-4">
 
                     <h5 class="mb-0 fw-semibold">
+
                         Actividad Reciente
+
                     </h5>
 
                 </div>
 
-                <div class="card-body">
+                <div
+                    class="card-body"
+                    id="recentActivity">
 
-                    <div id="recentActivity">
+                    <div class="text-center py-5 text-muted">
 
-                        <div class="d-flex mb-4">
-
-                            <div class="me-3">
-
-                                <span class="badge bg-success rounded-circle p-2">
-
-                                    <i class="bi bi-play-fill"></i>
-
-                                </span>
-
-                            </div>
-
-                            <div>
-
-                                <strong>Pozo Norte</strong>
-
-                                <br>
-
-                                <small class="text-muted">
-
-                                    Encendido de bomba
-
-                                </small>
-
-                                <br>
-
-                                <small class="text-primary">
-
-                                    Hace 10 minutos
-
-                                </small>
-
-                            </div>
+                        <div
+                            class="spinner-border spinner-border-sm me-2"
+                            role="status">
 
                         </div>
 
-                        <div class="d-flex mb-4">
-
-                            <div class="me-3">
-
-                                <span class="badge bg-warning rounded-circle p-2">
-
-                                    <i class="bi bi-tools"></i>
-
-                                </span>
-
-                            </div>
-
-                            <div>
-
-                                <strong>Bomba 4</strong>
-
-                                <br>
-
-                                <small class="text-muted">
-
-                                    Mantenimiento preventivo
-
-                                </small>
-
-                                <br>
-
-                                <small class="text-primary">
-
-                                    Hace 1 hora
-
-                                </small>
-
-                            </div>
-
-                        </div>
-
-                        <div class="d-flex mb-4">
-
-                            <div class="me-3">
-
-                                <span class="badge bg-danger rounded-circle p-2">
-
-                                    <i class="bi bi-exclamation-triangle-fill"></i>
-
-                                </span>
-
-                            </div>
-
-                            <div>
-
-                                <strong>Comunidad San Pedro</strong>
-
-                                <br>
-
-                                <small class="text-muted">
-
-                                    Falla eléctrica
-
-                                </small>
-
-                                <br>
-
-                                <small class="text-primary">
-
-                                    Hace 2 horas
-
-                                </small>
-
-                            </div>
-
-                        </div>
-
-                        <div class="d-flex">
-
-                            <div class="me-3">
-
-                                <span class="badge bg-info rounded-circle p-2">
-
-                                    <i class="bi bi-droplet-fill"></i>
-
-                                </span>
-
-                            </div>
-
-                            <div>
-
-                                <strong>Pozo Central</strong>
-
-                                <br>
-
-                                <small class="text-muted">
-
-                                    Revisión hidráulica
-
-                                </small>
-
-                                <br>
-
-                                <small class="text-primary">
-
-                                    Hace 4 horas
-
-                                </small>
-
-                            </div>
-
-                        </div>
+                        Cargando actividad...
 
                     </div>
 
@@ -245,70 +129,40 @@
 
     </div>
 
-</div>
-<!-- Alertas y Próximos Mantenimientos -->
+    <!-- Alertas y Mantenimientos -->
+    <div class="row mt-4 g-4">
 
-<div class="row mt-4 g-4">
+        <!-- Alertas -->
 
-    <!-- Alertas -->
+        <div class="col-12 col-lg-6">
 
-    <div class="col-12 col-xl-6">
+            <div class="card shadow-sm border-0 rounded-4 h-100">
 
-        <div class="card shadow-sm border-0 rounded-4 h-100">
+                <div class="card-header bg-white border-0">
 
-            <div class="card-header bg-white border-0">
+                    <h5 class="mb-0 fw-semibold">
 
-                <h5 class="mb-0 fw-semibold">
+                        <i class="bi bi-bell-fill text-danger me-2"></i>
 
-                    <i class="bi bi-bell-fill text-danger me-2"></i>
+                        Alertas del Sistema
 
-                    Alertas del Sistema
-
-                </h5>
-
-            </div>
-
-            <div class="card-body">
-
-                <div class="alert alert-danger d-flex align-items-center">
-
-                    <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
-
-                    <div>
-
-                        <strong>Bomba 3 fuera de servicio</strong>
-
-                        <br>
-
-                        <small>Hace 20 minutos</small>
-
-                    </div>
+                    </h5>
 
                 </div>
 
-                <div class="alert alert-warning d-flex align-items-center">
+                <div
+                    class="card-body"
+                    id="systemAlerts">
 
-                    <i class="bi bi-box-seam fs-4 me-3"></i>
+                    <div class="text-center py-5 text-muted">
 
-                    <div>
+                        <div
+                            class="spinner-border spinner-border-sm me-2"
+                            role="status">
 
-                        <strong>Inventario bajo</strong>
+                        </div>
 
-                        <br>
-
-                        <small>Quedan 3 contactores</small>
-
-                    </div>
-
-                </div>
-
-                <div class="alert alert-success d-flex align-items-center mb-0">
-
-                    <i class="bi bi-check-circle-fill fs-4 me-3"></i>
-
-                    <div>
-
-                        <strong>Todos los pozos principales operando</strong>
+                        Cargando alertas...
 
                     </div>
 
@@ -318,97 +172,39 @@
 
         </div>
 
-    </div>
+        <!-- Próximos mantenimientos -->
 
-    <!-- Próximos mantenimientos -->
+        <div class="col-12 col-lg-6">
 
-    <div class="col-12 col-xl-6">
+            <div class="card shadow-sm border-0 rounded-4 h-100">
 
-        <div class="card shadow-sm border-0 rounded-4 h-100">
+                <div class="card-header bg-white border-0">
 
-            <div class="card-header bg-white border-0">
+                    <h5 class="mb-0 fw-semibold">
 
-                <h5 class="mb-0 fw-semibold">
+                        <i class="bi bi-calendar-event-fill text-primary me-2"></i>
 
-                    <i class="bi bi-calendar-event-fill text-primary me-2"></i>
+                        Próximos Mantenimientos
 
-                    Próximos Mantenimientos
-
-                </h5>
-
-            </div>
-
-            <div class="card-body">
-
-                <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
-
-                    <div>
-
-                        <strong>Pozo Norte</strong>
-
-                        <br>
-
-                        <small class="text-muted">
-
-                            Mantenimiento preventivo
-
-                        </small>
-
-                    </div>
-
-                    <span class="badge bg-primary">
-
-                        05 Ago
-
-                    </span>
+                    </h5>
 
                 </div>
 
-                <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                <div
+                    class="card-body"
+                    id="nextMaintenance">
 
-                    <div>
+                    <div class="text-center py-5 text-muted">
 
-                        <strong>Bomba 2</strong>
+                        <div
+                            class="spinner-border spinner-border-sm me-2"
+                            role="status">
 
-                        <br>
+                        </div>
 
-                        <small class="text-muted">
-
-                            Cambio de baleros
-
-                        </small>
-
-                    </div>
-
-                    <span class="badge bg-warning text-dark">
-
-                        08 Ago
-
-                    </span>
-
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center">
-
-                    <div>
-
-                        <strong>Pozo Central</strong>
-
-                        <br>
-
-                        <small class="text-muted">
-
-                            Revisión eléctrica
-
-                        </small>
+                        Cargando mantenimientos...
 
                     </div>
-
-                    <span class="badge bg-success">
-
-                        12 Ago
-
-                    </span>
 
                 </div>
 
