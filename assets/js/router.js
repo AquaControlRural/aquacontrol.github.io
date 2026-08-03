@@ -65,6 +65,13 @@ async function cargarVista(vista) {
                 bombas.initBombas();
 
                 break;
+            case "inventario":
+
+                const inventario = await import("./modules/inventario.js");
+
+                inventario.initInventario();
+
+            break;
             case "mantenimientos":
 
                 const mantenimientos = await import("./modules/mantenimientos.js");
@@ -86,6 +93,13 @@ async function cargarVista(vista) {
                 calendario.initCalendario();
 
                 break;
+            case "reportes":
+
+                const reportes = await import("./modules/reportes.js");
+
+                reportes.initReportes();
+
+            break;
 
         }
 
