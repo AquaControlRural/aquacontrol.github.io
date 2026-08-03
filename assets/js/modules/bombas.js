@@ -2,7 +2,8 @@ import {
     agregar,
     actualizar,
     eliminar,
-    escuchar
+    escuchar,
+    registrarBitacora
 } from "../services/database.js";
 
 let modal;
@@ -145,12 +146,30 @@ async function guardarBomba() {
             idEditar,
             datos
         );
+        await registrarBitacora(
+
+            "Bombas",
+
+            "Edición",
+
+            `Se editó la bomba ${nombre}`
+
+        );
 
     } else {
 
         await agregar(
             "bombas",
             datos
+        );
+        await registrarBitacora(
+
+            "Bombas",
+
+            "Registro",
+
+            `Se registró la bomba ${nombre}`
+
         );
 
     }
@@ -326,6 +345,15 @@ async function eliminarBomba(id) {
     });
 
     if (!respuesta.isConfirmed) return;
+    await registrarBitacora(
+
+        "Bombas",
+
+        "Eliminación",
+
+        `Se eliminó la bomba ${datosBombas[id].nombre}`
+
+    );
 
     await eliminar("bombas", id);
 

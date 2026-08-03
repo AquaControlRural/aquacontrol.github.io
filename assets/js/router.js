@@ -72,6 +72,20 @@ async function cargarVista(vista) {
                 mantenimientos.initMantenimientos();
 
                 break;
+            case "bitacora":
+
+                const bitacora = await import("./modules/bitacora.js");
+
+                bitacora.initBitacora();
+
+                break;
+            case "calendario":
+
+                const calendario = await import("./modules/calendario.js");
+
+                calendario.initCalendario();
+
+                break;
 
         }
 

@@ -98,3 +98,33 @@ export function escuchar(ruta, callback) {
     });
 
 }
+/*==================================================
+    REGISTRAR BITÁCORA
+==================================================*/
+
+export async function registrarBitacora(
+    modulo,
+    accion,
+    descripcion,
+    usuario = "Administrador"
+) {
+
+    const nuevaReferencia = push(ref(db, "bitacora"));
+
+    await set(nuevaReferencia, {
+
+        modulo,
+
+        accion,
+
+        descripcion,
+
+        usuario,
+
+        fecha: new Date().toLocaleString("es-MX"),
+
+        fechaRegistro: new Date().toISOString()
+
+    });
+
+}

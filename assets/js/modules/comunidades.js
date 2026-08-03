@@ -2,7 +2,8 @@ import {
     agregar,
     actualizar,
     eliminar,
-    escuchar
+    escuchar,
+    registrarBitacora
 } from "../services/database.js";
 
 let modal;
@@ -107,17 +108,15 @@ async function guardarComunidad() {
             datos
         );
 
-        Swal.fire({
+        await registrarBitacora(
 
-            icon: "success",
+            "Comunidades",
 
-            title: "Comunidad actualizada",
+            "Edición",
 
-            timer: 1200,
+            `Se editó la comunidad ${nombre}`
 
-            showConfirmButton: false
-
-        });
+        );
 
     } else {
 
@@ -126,17 +125,15 @@ async function guardarComunidad() {
             datos
         );
 
-        Swal.fire({
+        await registrarBitacora(
 
-            icon: "success",
+            "Comunidades",
 
-            title: "Comunidad registrada",
+            "Registro",
 
-            timer: 1200,
+            `Se registró la comunidad ${nombre}`
 
-            showConfirmButton: false
-
-        });
+        );
 
     }
 
@@ -152,8 +149,19 @@ async function guardarComunidad() {
 
     modal.hide();
 
-}
+    Swal.fire({
 
+        icon: "success",
+
+        title: "Información guardada",
+
+        timer: 1200,
+
+        showConfirmButton: false
+
+    });
+
+}
 function cargarComunidades() {
 
     escuchar("comunidades", (datos) => {
@@ -186,65 +194,53 @@ function cargarComunidades() {
 
             tbody.innerHTML += `
 
-            <tr>
+                <tr>
 
-                <td>${contador++}</td>
+                    <td>${contador++}</td>
 
-                <td>
+                    <td><strong>${comunidad.nombre}</strong></td>
 
-                    <strong>${comunidad.nombre}</strong>
+                    <td>${comunidad.municipio}</td>
 
-                </td>
+                    <td>${comunidad.habitantes}</td>
 
-                <td>
+                    <td>${comunidad.responsable}</td>
 
-                    ${comunidad.municipio}
+                    <td>
 
-                </td>
+                        <span class="badge ${
+                            comunidad.estado === "Activa"
+                                ? "bg-success"
+                                : "bg-secondary"
+                        }">
 
-                <td>
+                            ${comunidad.estado}
 
-                    ${comunidad.habitantes}
+                        </span>
 
-                </td>
+                    </td>
 
-                <td>
+                    <td class="text-center">
 
-                    ${comunidad.responsable}
+                        <button
+                            class="btn-action btn-edit"
+                            data-id="${id}">
 
-                </td>
+                            <i class="bi bi-pencil"></i>
 
-                <td>
+                        </button>
 
-                    <span class="badge ${comunidad.estado === "Activa" ? "bg-success" : "bg-secondary"}">
+                        <button
+                            class="btn-action btn-delete"
+                            data-id="${id}">
 
-                        ${comunidad.estado}
+                            <i class="bi bi-trash"></i>
 
-                    </span>
+                        </button>
 
-                </td>
+                    </td>
 
-                <td class="text-center">
-
-                    <button
-                        class="btn-action btn-edit"
-                        data-id="${id}">
-
-                        <i class="bi bi-pencil"></i>
-
-                    </button>
-
-                    <button
-                        class="btn-action btn-delete"
-                        data-id="${id}">
-
-                        <i class="bi bi-trash"></i>
-
-                    </button>
-
-                </td>
-
-            </tr>
+                </tr>
 
             `;
 
@@ -305,6 +301,16 @@ async function eliminarComunidad(id) {
 
     if (!respuesta.isConfirmed) return;
 
+    await registrarBitacora(
+
+        "Comunidades",
+
+        "Eliminación",
+
+        `Se eliminó la comunidad ${datosComunidades[id].nombre}`
+
+    );
+
     await eliminar(
         "comunidades",
         id
@@ -335,5 +341,13 @@ function limpiarFormulario() {
     document.getElementById("txtResponsable").value = "";
 
     document.getElementById("cmbEstado").selectedIndex = 0;
+
+    document.querySelector(".modal-title").textContent =
+        "Nueva Comunidad";
+
+    document.getElementById("btnGuardarComunidad").textContent =
+        "Guardar";
+
+    idEditar = null;
 
 }

@@ -2,7 +2,8 @@ import {
     agregar,
     actualizar,
     eliminar,
-    escuchar
+    escuchar,
+    registrarBitacora
 } from "../services/database.js";
 
 let idEditar = null;
@@ -117,12 +118,30 @@ async function guardarPozo() {
             idEditar,
             datos
         );
+        await registrarBitacora(
+
+            "Pozos",
+
+            "Edición",
+
+            `Se editó el pozo ${nombre}`
+
+        );
 
     } else {
 
         await agregar(
             "pozos",
             datos
+        );
+        await registrarBitacora(
+
+            "Pozos",
+
+            "Registro",
+
+            `Se registró el pozo ${nombre}`
+
         );
 
     }
@@ -323,5 +342,58 @@ function editarPozo(id) {
         "Actualizar";
 
     modal.show();
+
+}
+
+async function eliminarPozo(id) {
+
+    const respuesta = await Swal.fire({
+
+        title: "¿Eliminar pozo?",
+
+        text: "Esta acción no se puede deshacer.",
+
+        icon: "warning",
+
+        showCancelButton: true,
+
+        confirmButtonColor: "#dc3545",
+
+        cancelButtonColor: "#6c757d",
+
+        confirmButtonText: "Sí, eliminar",
+
+        cancelButtonText: "Cancelar"
+
+    });
+
+    if (!respuesta.isConfirmed) return;
+
+    await registrarBitacora(
+
+        "Pozos",
+
+        "Eliminación",
+
+        `Se eliminó el pozo ${datosPozos[id].nombre}`
+
+    );
+
+    await eliminar(
+        "pozos",
+        id
+    );
+
+    Swal.fire({
+
+        icon: "success",
+
+        title: "Pozo eliminado",
+
+        timer: 1200,
+
+        showConfirmButton: false
+
+    });
 
 }

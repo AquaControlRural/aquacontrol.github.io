@@ -2,7 +2,8 @@ import {
     agregar,
     actualizar,
     eliminar,
-    escuchar
+    escuchar,
+    registrarBitacora
 } from "../services/database.js";
 
 let modal;
@@ -247,12 +248,30 @@ async function guardarMantenimiento() {
             idEditar,
             datos
         );
+        await registrarBitacora(
+
+            "Mantenimientos",
+
+            "Edición",
+
+            `Se actualizó el mantenimiento de la bomba ${bombaNombre}`
+
+        );
 
     } else {
 
         await agregar(
             "mantenimientos",
             datos
+        );
+        await registrarBitacora(
+
+            "Mantenimientos",
+
+            "Registro",
+
+            `Se registró el mantenimiento de la bomba ${bombaNombre}`
+
         );
 
     }

@@ -1,3 +1,5 @@
+import { contar } from "../services/database.js";
+
 const cards = [
 
     {
@@ -38,7 +40,15 @@ const cards = [
 
 ];
 
-export function renderDashboard(){
+export async function renderDashboard(){
+
+    cards[0].value = await contar("pozos");
+
+    cards[1].value = await contar("bombas");
+
+    cards[2].value = await contar("mantenimientos");
+
+    cards[3].value = 0;
 
     renderCards();
 

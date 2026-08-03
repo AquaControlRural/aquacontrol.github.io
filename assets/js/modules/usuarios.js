@@ -1,8 +1,9 @@
 import {
     agregar,
+    escuchar,
     actualizar,
     eliminar,
-    escuchar
+    registrarBitacora
 } from "../services/database.js";
 import { exportarExcel } from "../utils/excel.js";
 let modal;
@@ -194,7 +195,18 @@ async function eliminarUsuario(id){
     });
 
     if(!respuesta.isConfirmed) return;
+    
+    await registrarBitacora(
 
+        "Usuarios",
+
+        "Eliminación",
+
+        `Se eliminó el usuario ${datosUsuarios[id].nombre}`
+
+    );
+
+    await eliminar("usuarios", id);
     await eliminar("usuarios", id);
 
     Swal.fire({
@@ -253,6 +265,15 @@ async function guardarUsuario() {
             estado
 
         });
+        await registrarBitacora(
+
+            "Usuarios",
+
+            "Edición",
+
+            `Se editó el usuario ${nombre}`
+
+        );
 
         limpiarFormulario();
 
@@ -295,6 +316,15 @@ async function guardarUsuario() {
         fechaRegistro: new Date().toISOString()
 
     });
+    await registrarBitacora(
+
+        "Usuarios",
+
+        "Registro",
+
+        `Se registró el usuario ${nombre}`
+
+    );
 
     limpiarFormulario();
 
